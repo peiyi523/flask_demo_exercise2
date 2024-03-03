@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>書籍首頁</title>
+    <style>
+        body {
+
+            text-align: center;
+        }
+
+        .list {
+            background-color: rgb(153, 153, 244);
+            color: pink;
+            padding: 12px;
+            border-radius: 6px;
+            display: inline-block;
+            width: 500px;
+        }
+
+        .name {
+            background-color: deeppink;
+            color: aliceblue;
+            padding: 6px;
+            border-radius: 6px;
+            width: 200px;
+            display: inline-block;
+        }
+
+
+
+        .book {
+            margin-top: 16px;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        #value {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="list">𖢅書籍列表𖢅</h1>
+    {% for id in books %}
+    <!-- 要輸出就是大括號2個 -->
+    <div class="book">
+        <h2 class="name">書名:{{books[id]["name"]}}</h2>
+        <p class="price">價格:
+            <span id="value">${{books[id]["price"]}}</span>
+        </p>
+        <img src='{{books[id]["image_url"]}}' alt="">
+        <hr>
+    </div>
+    {% endfor %}
+    <!-- {{books}} -->
+
+</body>
+
+</html>
