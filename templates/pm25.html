@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        background-color: antiquewhite;
+        text-align: center;
+    }
+
+    table {
+        width: 80%;
+        margin: 0 auto;
+        border: 1px solid black;
+        border-collapse: collapse;
+
+    }
+
+    .head {
+        background-color: darkgreen;
+        color: aliceblue;
+        font-size: 18px;
+    }
+
+    tbody {
+        background-color: rgb(221, 242, 221);
+    }
+
+    td:nth-child(1) {
+        background-color: aquamarine;
+    }
+
+    td:nth-child(3) {
+        background-color: yellowgreen;
+    }
+
+    .title {
+        background-color: tomato;
+        color: blanchedalmond;
+        display: inline-block;
+        padding: 12px;
+        border-radius: 6px;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM2.5表格</title>
+</head>
+
+<body>
+    <h1 class="title">PM2.5全省數據</h1>
+    <!-- {{columns}} -->
+    <!-- {{values}} -->
+    <table border="1">
+        <thead class="head">
+            <tr>
+                {% for col in columns %}
+                <th>{{col}}</th>
+                {%endfor%}
+            </tr>
+        </thead>
+        <tbody>
+            {% for value in values %}
+            <tr>
+                {% for val in value %}
+                <td>{{val}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>
